@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='dist/css/output.css')}}"
+    />
+    <title>PDF to Speech</title>
+  </head>
+  <body class="bg-zinc-950 text-zinc-50 flex flex-col items-center justify-center h-screen">
+    <div class="container text-center">
+        <h1 class="text-2xl mb-4">Upload and Convert PDF</h1>
+        <form
+            action="{{ url_for('upload_file') }}"
+            method="post"
+            enctype="multipart/form-data"
+            class="mt-4"
+        >
+            <div class="relative inline-block">
+                <input
+                    type="file"
+                    name="pdf_file"
+                    accept=".pdf"
+                    id="pdfFileInput"
+                    class="absolute inset-0 opacity-0 cursor-pointer"
+                    onchange="displayFileName()"
+                />
+                <label
+                    for="pdfFileInput"
+                    class="block bg-zinc-100 text-zinc-950 py-2 px-4 font-semibold rounded cursor-pointer"
+                >
+                    Choose File
+                </label>
+            </div>
+
+            <div id="fileName" class="mt-2 text-zinc-400"></div>
+
+            <button
+                type="submit"
+                class="mt-4 bg-zinc-100 text-zinc-950 py-2 px-4 font-semibold rounded"
+            >
+                Upload and Convert
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function displayFileName() {
+            const fileInput = document.getElementById('pdfFileInput');
+            const fileNameDiv = document.getElementById('fileName');
+            if (fileInput.files.length > 0) {
+                fileNameDiv.textContent = `Selected file: ${fileInput.files[0].name}`;
+            } else {
+                fileNameDiv.textContent = 'No file selected';
+            }
+        }
+    </script>
+</body>
+</html>

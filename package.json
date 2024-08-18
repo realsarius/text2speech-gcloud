@@ -1,0 +1,15 @@
+{
+  "name": "day-91",
+  "version": "1.0.0",
+  "description": "PDF to Text to Speech with [Google Cloud](https://console.cloud.google.com/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}

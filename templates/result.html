@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/output.css') }}">
+    <title>Result</title>
+</head>
+<body class="bg-zinc-950 text-zinc-50 flex flex-col items-center justify-center h-screen">
+    <div class="container text-center">
+        <h1 class="text-2xl mb-4">{{ message }}</h1>
+        <a href="{{ url_for('home') }}" class="bg-zinc-100 text-zinc-950 py-2 px-4 font-semibold rounded">Go Back</a>
+    </div>
+</body>
+</html>
